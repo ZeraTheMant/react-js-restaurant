@@ -11,7 +11,7 @@ const MainContent = () => {
                 <div id="banner-text-container">
                     <h1>Welcome</h1>
                     <p>To My Favorite Restaurant</p>
-                    <a href="#">Make an order</a>
+                    <a href="/shop/">Make an order</a>
                 </div>
             </section>
         </main>

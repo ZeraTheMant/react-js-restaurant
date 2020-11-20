@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import displayMobile from './display_mobile.js';
 import ItemsSection from './ItemsSection.js';
+import Cart from './Cart.js';
 import '../styles/shop_section.css';
 
 const categories = [
@@ -202,16 +203,22 @@ const ShopSection = () => {
     window.addEventListener('resize', categoriesDisplayScreenResizeStatus);
     
     return (
-        <section id="shop">
-            <div id="categories-holder">
-                {renderMobileDisplayCategories()}           
-                {renderWideScreenDisplayCategories()}
-            </div>
-            
-            <ItemsSection
-                activeCategory={activeCategory}
-                bog={5}
+        <section id="shop-container">
+            <Cart
+                
             />
+            
+            <div id="shop">
+                <div id="categories-holder">
+                    {renderMobileDisplayCategories()}           
+                    {renderWideScreenDisplayCategories()}
+                </div>
+                
+                <ItemsSection
+                    activeCategory={activeCategory}
+                    bog={5}
+                />          
+            </div>
         </section>
     )
 };
