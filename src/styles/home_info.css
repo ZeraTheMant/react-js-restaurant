@@ -68,3 +68,14 @@
         color: grey;
     }
 }
+
+@media screen and (max-height: 400px) {
+    #info-text-container  p,
+    #info-text-container a    {
+        font-size: 0.8rem;
+    }
+    
+    #info-text-container a {
+        padding: 3px;  
+    }
+}

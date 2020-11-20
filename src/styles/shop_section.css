@@ -1,0 +1,47 @@
+body {
+    background: lightgrey;
+}
+
+#shop {
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+#widescreen-display ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+#widescreen-display ul li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#widescreen-display ul li:hover,
+.selected {
+    background: brown;
+    color: white;
+}
+
+#mobile-display {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#categories-holder {
+    color: brown;
+    padding: 30px 0 50px 0;
+    font-size: 1.3rem;
+}
+
+
+
+/* media queries */
+
+@media screen and (min-width: 800px) {
+    #shop {
+        width: 80%;
+    }
+}

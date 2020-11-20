@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
-
-function showButton() {
-    return window.innerWidth <= 800;
-}
+import displayMobile from './display_mobile.js';
 
 const HeaderNav = () => {
-    const [button, setButton] = useState(showButton());
-    const [navItems, setNavItems] = useState(!showButton());
+    const [button, setButton] = useState(displayMobile());
+    const [navItems, setNavItems] = useState(!displayMobile());
     
     const navItemsDisplayStatus = () => {
         setNavItems(!navItems);
     };
     
     const buttonScreenResizeStatus = () => {
-        setButton(showButton());
+        setButton(displayMobile());
     };
     
     useEffect(() => {
@@ -38,8 +35,8 @@ const HeaderNav = () => {
                 <nav>  
                     <div id="nav-items-holder">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/shop/">Shop</a></li>
                         </ul>
                     </div>
                 </nav>
