@@ -120,6 +120,35 @@ const ShopSection = () => {
     const [mobileCategories, setMobileCategories] = useState(displayMobile());
     const [wideScreenCategories, setWideScreenCategories] = useState(!mobileCategories);
     const [activeCategory, setActiveCategory] = useState(CategoryItemsArray[0]);
+    const [cartContents, setCartContents] = useState([]);
+    
+    const addCartContent = (newContent) => {
+        const existingItemIndex = cartContents.findIndex((obj) => {
+            return obj.name === newContent.name;
+        });
+        
+        if (existingItemIndex != -1) {
+            let prevCartContents = [...cartContents];
+            let itemToBeModified = Object.assign({}, prevCartContents[existingItemIndex]);
+            
+            const additionalCost = newContent.price * newContent.quantity;
+            const totalItems = itemToBeModified.quantity + newContent.quantity;
+            const totalPrice = itemToBeModified.price + additionalCost;
+            
+            itemToBeModified.quantity = totalItems;
+            itemToBeModified.price = totalPrice;
+            
+            prevCartContents[existingItemIndex] = itemToBeModified;
+            setCartContents(prevCartContents);
+            
+        } else {
+            setCartContents(cartContents.concat([newContent]));
+        }
+    };
+    
+    const handleClick = (obj) => {
+        alert(obj.name)
+    };    
     
     const categoriesDisplayScreenResizeStatus = () => {
         setMobileCategories(displayMobile());
@@ -205,9 +234,9 @@ const ShopSection = () => {
     return (
         <section id="shop-container">
             <Cart
-                
-            />
-            
+                cartContents={cartContents}    
+            />      
+    
             <div id="shop">
                 <div id="categories-holder">
                     {renderMobileDisplayCategories()}           
@@ -217,6 +246,7 @@ const ShopSection = () => {
                 <ItemsSection
                     activeCategory={activeCategory}
                     bog={5}
+                    onClick={addCartContent}
                 />          
             </div>
         </section>

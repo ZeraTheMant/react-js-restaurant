@@ -2,6 +2,20 @@ import React, { useState } from "react";
 import '../styles/items_section.css';
 
 const Item = (props) => {
+    const [itemAmount, setItemAmount] = useState(0);
+    
+    const amountChange = (e) => {
+        setItemAmount(e.target.value);
+    }
+    
+    const createItemObj = () => {
+        return {
+            name: props.name,
+            price: (itemAmount * props.price).toFixed(2),
+            quantity: itemAmount
+        }
+    }
+    
     return (
         <div className="shop-item" key={props.move}>
             <img src={props.img}/>
@@ -12,8 +26,8 @@ const Item = (props) => {
                 </div>
                 
                 <div>
-                    <input type="number" min="0" placeholder="Amount"/>
-                    <button type="button">Add to cart</button>
+                    <input type="number" min="0" value={itemAmount} onChange={amountChange} placeholder="Amount"/>
+                    <button type="button" onClick={() => props.onClick(createItemObj())}>Add to cart</button>
                 </div>
             </div>
         </div>
@@ -21,6 +35,7 @@ const Item = (props) => {
 };
 
 const ItemsSection = (props) => {
+    
     const createItems = () => {
         const items = props.activeCategory.items;
         const itemHTML = items.map((step, move) => {
@@ -30,6 +45,7 @@ const ItemsSection = (props) => {
                     img={step.img}
                     price={step.price}
                     key={move}
+                    onClick={props.onClick}
                 />
             );
         });

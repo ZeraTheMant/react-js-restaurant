@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const Cart = () => {    
+const Cart = (props) => {    
     return (
         <div id="cart">
-            <h1>Cart (0)</h1>
+            <h1>Cart ({props.cartContents.length})</h1>
         </div>
     )
 };
