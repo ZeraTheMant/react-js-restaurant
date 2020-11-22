@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import displayMobile from './display_mobile.js';
 import logo from '../images/logo.png'; 
 
@@ -36,8 +37,8 @@ const HeaderNav = () => {
                 <nav>  
                     <div id="nav-items-holder">
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/shop/">Shop</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/shop/">Shop</Link></li>
                         </ul>
                     </div>
                 </nav>
@@ -49,10 +50,10 @@ const HeaderNav = () => {
         <header>
             <div id="title-header">
                 <div id="logo-holder">
-                    <a href="/">
+                    <Link to="/">
                     <img src={logo}/>
                     <h1>My Favorite Restaurant</h1>
-                    </a>
+                    </Link>
                 </div>
                 
                 {renderMenuMobileButton()}
