@@ -1,20 +1,33 @@
 {
   "files": {
     "main.css": "/react-js-restaurant/static/css/main.3f53a010.chunk.css",
-    "main.js": "/react-js-restaurant/static/js/main.13045bed.chunk.js",
-    "main.js.map": "/react-js-restaurant/static/js/main.13045bed.chunk.js.map",
+    "main.js": "/react-js-restaurant/static/js/main.d89e94c0.chunk.js",
+    "main.js.map": "/react-js-restaurant/static/js/main.d89e94c0.chunk.js.map",
     "runtime-main.js": "/react-js-restaurant/static/js/runtime-main.351279a5.js",
     "runtime-main.js.map": "/react-js-restaurant/static/js/runtime-main.351279a5.js.map",
-    "static/js/2.e330a6f5.chunk.js": "/react-js-restaurant/static/js/2.e330a6f5.chunk.js",
-    "static/js/2.e330a6f5.chunk.js.map": "/react-js-restaurant/static/js/2.e330a6f5.chunk.js.map",
+    "static/js/2.f536bef0.chunk.js": "/react-js-restaurant/static/js/2.f536bef0.chunk.js",
+    "static/js/2.f536bef0.chunk.js.map": "/react-js-restaurant/static/js/2.f536bef0.chunk.js.map",
     "index.html": "/react-js-restaurant/index.html",
     "static/css/main.3f53a010.chunk.css.map": "/react-js-restaurant/static/css/main.3f53a010.chunk.css.map",
-    "static/js/2.e330a6f5.chunk.js.LICENSE.txt": "/react-js-restaurant/static/js/2.e330a6f5.chunk.js.LICENSE.txt"
+    "static/js/2.f536bef0.chunk.js.LICENSE.txt": "/react-js-restaurant/static/js/2.f536bef0.chunk.js.LICENSE.txt",
+    "static/media/banner_pic.070e6fe5.jpg": "/react-js-restaurant/static/media/banner_pic.070e6fe5.jpg",
+    "static/media/cheeseburger.7b546854.jpg": "/react-js-restaurant/static/media/cheeseburger.7b546854.jpg",
+    "static/media/chickenburger.2199b965.jpg": "/react-js-restaurant/static/media/chickenburger.2199b965.jpg",
+    "static/media/flan.27a454be.jpg": "/react-js-restaurant/static/media/flan.27a454be.jpg",
+    "static/media/halohalo.0933bc25.jpg": "/react-js-restaurant/static/media/halohalo.0933bc25.jpg",
+    "static/media/hawaiian.f6d340f3.jpg": "/react-js-restaurant/static/media/hawaiian.f6d340f3.jpg",
+    "static/media/logo.b516221a.png": "/react-js-restaurant/static/media/logo.b516221a.png",
+    "static/media/mango_juice.c3f089e2.jpg": "/react-js-restaurant/static/media/mango_juice.c3f089e2.jpg",
+    "static/media/pepperoni.ff287fb8.jpg": "/react-js-restaurant/static/media/pepperoni.ff287fb8.jpg",
+    "static/media/rootbeer.d655644d.jpg": "/react-js-restaurant/static/media/rootbeer.d655644d.jpg",
+    "static/media/spag_homepage.9814ce0b.jpg": "/react-js-restaurant/static/media/spag_homepage.9814ce0b.jpg",
+    "static/media/spaghetti.f42e0db3.jpg": "/react-js-restaurant/static/media/spaghetti.f42e0db3.jpg",
+    "static/media/whitepasta.43b996a6.jpg": "/react-js-restaurant/static/media/whitepasta.43b996a6.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.351279a5.js",
-    "static/js/2.e330a6f5.chunk.js",
+    "static/js/2.f536bef0.chunk.js",
     "static/css/main.3f53a010.chunk.css",
-    "static/js/main.13045bed.chunk.js"
+    "static/js/main.d89e94c0.chunk.js"
   ]
 }
