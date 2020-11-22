@@ -1,10 +1,11 @@
 import React from "react";
 import '../styles/home_info.css';
+import spag from '../images/spag_homepage.jpg'; 
 
 const HomeInfo = () => {
     return (
         <section id="home-info">
-            <img src="/images/spag_homepage.jpg"/>
+            <img src={spag}/>
             
             <div id="info-text-container">
                 <div>

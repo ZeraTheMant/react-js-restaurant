@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import displayMobile from './display_mobile.js';
+import logo from '../images/logo.png'; 
 
 const HeaderNav = () => {
     const [button, setButton] = useState(displayMobile());
@@ -48,8 +49,8 @@ const HeaderNav = () => {
         <header>
             <div id="title-header">
                 <div id="logo-holder">
-                    <a href="#">
-                    <img src="/images/logo.png"/>
+                    <a href="/">
+                    <img src={logo}/>
                     <h1>My Favorite Restaurant</h1>
                     </a>
                 </div>

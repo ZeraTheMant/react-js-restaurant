@@ -1,11 +1,12 @@
 import React from "react";
 import '../styles/main_content.css';
+import banner from '../images/banner_pic.jpg'; 
 
 const MainContent = () => {
     return (
         <main>
             <section id="banner-holder">
-                <img src="/images/banner_pic.jpg"/>
+                <img src={banner}/>
                 <div id="banner-grey-shadow"></div>
                 
                 <div id="banner-text-container">

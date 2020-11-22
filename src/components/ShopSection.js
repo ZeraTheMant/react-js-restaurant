@@ -4,6 +4,17 @@ import ItemsSection from './ItemsSection.js';
 import Cart from './Cart.js';
 import '../styles/shop_section.css';
 
+import hawaiian from '../images/hawaiian.jpg'; 
+import pepperoni from '../images/pepperoni.jpg'; 
+import spaghetti from '../images/spaghetti.jpg'; 
+import whitepasta from '../images/whitepasta.jpg'; 
+import chickenburger from '../images/chickenburger.jpg'; 
+import cheeseburger from '../images/cheeseburger.jpg'; 
+import halohalo from '../images/halohalo.jpg'; rootbeer
+import flan from '../images/flan.jpg'; 
+import rootbeer from '../images/rootbeer.jpg';
+import mango_juice from '../images/mango_juice.jpg'; 
+
 const categories = [
     'All Products',
     'Pizza',
@@ -17,12 +28,12 @@ function getPizzaItems() {
     return [
         {
             name: 'Hawaiian',
-            img: '/images/hawaiian.jpg',
+            img: hawaiian,
             price: 10, 
         },
         {
             name: 'Pepperoni',
-            img: '/images/pepperoni.jpg',
+            img: pepperoni,
             price: 17, 
         },
     ];
@@ -32,12 +43,12 @@ function getPastaItems() {
     return [
         {
             name: 'Spaghetti',
-            img: '/images/spaghetti.jpg',
+            img: spaghetti,
             price: 20, 
         },
         {
             name: 'White Sauce Pasta',
-            img: '/images/whitepasta.jpg',
+            img: whitepasta,
             price: 23, 
         },
     ];
@@ -47,12 +58,12 @@ function getBurgerItems() {
     return [
         {
             name: 'Chicken Burger',
-            img: '/images/chickenburger.jpg',
+            img: chickenburger,
             price: 25
         },
         {
             name: 'Cheeseburger',
-            img: '/images/cheeseburger.jpg',
+            img: cheeseburger,
             price: 27
         },
     ]
@@ -62,12 +73,12 @@ function getDessertsItems() {
     return [
         {
             name: 'Halo-halo',
-            img: '/images/halohalo.jpg',
+            img: halohalo,
             price: 50
         },
         {
             name: 'Flan',
-            img: '/images/flan.jpg',
+            img: flan,
             price: 28
         },
     ]
@@ -77,12 +88,12 @@ function getDrinksItems() {
     return [
         {
             name: 'Root beer',
-            img: '/images/rootbeer.jpg',
+            img: rootbeer,
             price: 15
         },
         {
             name: 'Mango Juice',
-            img: '/images/mango_juice.jpg',
+            img: mango_juice,
             price: 8
         },
     ]
