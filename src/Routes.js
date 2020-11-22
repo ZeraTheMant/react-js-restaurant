@@ -10,8 +10,8 @@ const Routes = () => {//{process.env.PUBLIC_URL}
         <HashRouter basename={process.env.PUBLIC_URL}>
             <Route render = {({ location }) => (
                 <Switch location = { location }>
-                    <Route exact path="/" component={App} />
-                    <Route exact path="/shop" component={Shop} />
+                    <Route exact path="#" component={App} />
+                    <Route exact path="#/shop" component={Shop} />
                  </Switch>
             )} />
         </HashRouter>
