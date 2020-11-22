@@ -121,42 +121,101 @@ const ShopSection = () => {
     const [wideScreenCategories, setWideScreenCategories] = useState(!mobileCategories);
     const [activeCategory, setActiveCategory] = useState(CategoryItemsArray[0]);
     const [cartContents, setCartContents] = useState([]);
+    const [categoriesBar, setCategoriesBar] = useState(null);
+    const [cart, setCart] = useState(null);
     
-    const addCartContent = (newContent) => {
-        const existingItemIndex = cartContents.findIndex((obj) => {
-            return obj.name === newContent.name;
+    const getExistingItemIndex = (existingObj) => {
+        return cartContents.findIndex((obj) => {
+            return obj.name === existingObj.name;
         });
-        
-        if (existingItemIndex != -1) {
-            let prevCartContents = [...cartContents];
-            let itemToBeModified = Object.assign({}, prevCartContents[existingItemIndex]);
-            
-            const additionalCost = newContent.price * newContent.quantity;
-            const totalItems = itemToBeModified.quantity + newContent.quantity;
-            const totalPrice = itemToBeModified.price + additionalCost;
-            
-            itemToBeModified.quantity = totalItems;
-            itemToBeModified.price = totalPrice;
-            
-            prevCartContents[existingItemIndex] = itemToBeModified;
-            setCartContents(prevCartContents);
-            
-        } else {
-            setCartContents(cartContents.concat([newContent]));
+    };
+    
+    const removeFromCart = (name) => {
+        const newCartContents = cartContents.filter((val) => val.name != name);
+        setCartContents(newCartContents);
+    };
+    
+    const stickyToggle = (obj, classes) => {
+        if (obj) {
+            if (window.pageYOffset >= 60) {
+                classes.forEach(className => {
+                    obj.classList.add(className);
+                });
+            } else {
+                classes.forEach(className => {
+                    obj.classList.remove(className);
+                });
+            }
         }
     };
     
-    const handleClick = (obj) => {
-        alert(obj.name)
-    };    
+    window.addEventListener('scroll', () => {
+        stickyToggle(categoriesBar, ["sticky", "stickybar"]);
+        stickyToggle(cart, ["sticky"]);
+    });
     
+    const modifyCartContents = (existingItemIndex, existingObj, calcTotalItems, calcTotalPrice) => {
+        let prevCartContents = [...cartContents];
+        let itemToBeModified = Object.assign({}, prevCartContents[existingItemIndex]); 
+   
+        const additionalCost = itemToBeModified.pricePerUnit * existingObj.quantity;
+        const totalItems = calcTotalItems(itemToBeModified, existingObj);
+        const totalPrice = calcTotalPrice(itemToBeModified, additionalCost, totalItems);
+        itemToBeModified.quantity = totalItems;
+        itemToBeModified.price = totalPrice;
+        
+        prevCartContents[existingItemIndex] = itemToBeModified;
+        setCartContents(prevCartContents);
+    };
+    
+    const addCartContent = (newContent) => {
+        if (newContent.quantity > 0){
+            const existingItemIndex = getExistingItemIndex(newContent);
+            
+            if (existingItemIndex != -1) {
+                const calcTotalItems = (item1, item2) => item1.quantity + item2.quantity;
+                const calcTotalPrice = (item, addCost, totalItems) => parseFloat(parseFloat(item.price) + parseFloat(addCost)).toFixed(2);
+                modifyCartContents(existingItemIndex, newContent, calcTotalItems, calcTotalPrice);           
+                
+            } else {
+                setCartContents(cartContents.concat([newContent]));
+            }    
+        }
+        
+        alert(`Added ${ newContent.quantity } ${ newContent.name }s to your order.`)
+    };
+    
+    const changeItemAmount = (item, change) => {
+        const existingItemIndex = getExistingItemIndex(item);
+
+        if (existingItemIndex != -1) {
+            const calcTotalItems = (item1, item2) => item1.quantity += change;
+            const calcTotalPrice = (item, addCost, totalItems) => Number(item.pricePerUnit * totalItems).toFixed(2);
+            modifyCartContents(existingItemIndex, item, calcTotalItems, calcTotalPrice); 
+        }        
+    };
+
+    const incrementItem = (item) => {
+        changeItemAmount(item, 1);
+    };
+    
+    const decrementItem = (item) => {
+        if (item.quantity > 1) changeItemAmount(item, -1);
+    };
+
     const categoriesDisplayScreenResizeStatus = () => {
         setMobileCategories(displayMobile());
     };
     
     useEffect(() => {
        setWideScreenCategories(!mobileCategories);   
+
     }, [mobileCategories]);
+    
+    useEffect(() => {
+       setCategoriesBar(document.querySelector('#widescreen-display'));   
+       setCart(document.querySelector('#cart-holder'));    
+    })
     
     const getCategoryObj = (category) => {
         const categoryObj = CategoryItemsArray.filter((obj) => {
@@ -234,7 +293,10 @@ const ShopSection = () => {
     return (
         <section id="shop-container">
             <Cart
-                cartContents={cartContents}    
+                cartContents={cartContents}  
+                increment={incrementItem} 
+                decrement={decrementItem}     
+                removeFromCart={removeFromCart}            
             />      
     
             <div id="shop">

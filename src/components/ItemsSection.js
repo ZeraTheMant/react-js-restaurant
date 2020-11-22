@@ -9,10 +9,15 @@ const Item = (props) => {
     }
     
     const createItemObj = () => {
+        const quan = Number(itemAmount);
+        const price = Number(props.price).toFixed(2)
+        setItemAmount(0);
         return {
             name: props.name,
-            price: (itemAmount * props.price).toFixed(2),
-            quantity: itemAmount
+            pricePerUnit: price,
+            img: props.img,
+            price: Number((quan * price).toFixed(2)).toFixed(2),
+            quantity: quan
         }
     }
     
