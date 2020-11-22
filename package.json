@@ -1,6 +1,6 @@
 {
-  "homepage": "https://zerathemant.github.io/react-js-restaurant",
-  "name": "router",
+  "homepage": "https://zerathemant.github.io/react-js-restaurant/",
+  "name": "react-js-restaurant",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
