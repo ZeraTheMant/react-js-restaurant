@@ -7,8 +7,8 @@ const Routes = () => {
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
-                <Route exact path="/react-js-restaurant/" component={App} />
-                <Route exact path="/shop" component={Shop} />
+                <Route exact path="/" component={App} />
+                <Route exact path="/react-js-restaurant/fdsfsdds" component={Shop} />
             </Switch>
         </BrowserRouter>
     )
