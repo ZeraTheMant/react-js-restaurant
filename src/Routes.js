@@ -7,13 +7,9 @@ import Shop from "./Shop";
 const Routes = () => {//{process.env.PUBLIC_URL}
 
     return (
-        <HashRouter basename={process.env.PUBLIC_URL}>
-            <Route render = {({ location }) => (
-                <Switch location = { location }>
-                    <Route exact path="/" component={App} />
-                    <Route path="/shop" component={Shop} />
-                 </Switch>
-            )} />
+        <HashRoute>
+            <Route exact path="/" component={App} />
+            <Route path="/shop" component={Shop} />
         </HashRouter>
     )
 }
