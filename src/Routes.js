@@ -5,9 +5,9 @@ import Shop from "./Shop";
 
 const Routes = () => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL + '/react-js-restaurant'}>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
-                <Route exact path="/" component={App} />
+                <Route exact path="/react-js-restaurant/" component={App} />
                 <Route exact path="/shop" component={Shop} />
             </Switch>
         </BrowserRouter>
