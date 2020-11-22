@@ -48,7 +48,7 @@ const HeaderNav = () => {
         <header>
             <div id="title-header">
                 <div id="logo-holder">
-                    <a href="#">
+                    <a href="/">
                     <img src="/images/logo.png"/>
                     <h1>My Favorite Restaurant</h1>
                     </a>
